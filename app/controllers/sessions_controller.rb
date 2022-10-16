@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-    def new
-    end
+    def new; end
     def create 
         user = User.find_by(email: params[:email])
         #finds the existing user checks if the user can be authenticated.
@@ -17,5 +16,5 @@ class SessionsController < ApplicationController
             session[:user_id] = nil
             redirect_to_root_path, notice: 'Logged Out'
         end
-        
+
 end
